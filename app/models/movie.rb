@@ -21,6 +21,8 @@ class Movie < ApplicationRecord
 
   scope :sort_list, ->{order :release_time}
 
+  scope :search, lambda {|search| search ? where("title LIKE ?", "%#{search}%") : all}
+
   def display_image
     image.variant resize_to_limit: Settings.digits.resize_limit
   end

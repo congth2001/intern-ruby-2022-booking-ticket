@@ -29,6 +29,7 @@ class User < ApplicationRecord
   has_secure_password
 
   scope :sort_list, ->{order :user_name}
+  scope :search, lambda {|search| search ? where("user_name LIKE ?", "%#{search}%") : all}
 
   class << self
     def digest string

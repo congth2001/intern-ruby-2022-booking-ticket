@@ -1,5 +1,5 @@
 class Admin::UsersController < AdminController
-  before_action :find_user, except: %i(index)
+  before_action :find_user, except: %i(index search)
   before_action :admin_filter, only: %i(update destroy)
 
   def index
@@ -33,6 +33,11 @@ class Admin::UsersController < AdminController
       flash[:error] = t "not_deleted"
       redirect_to admin_users_path
     end
+  end
+
+  def search
+    @pagy, @users = pagy User.search(params[:search]),
+                                 items: Settings.digits.admin_movie_per_page
   end
 
   private

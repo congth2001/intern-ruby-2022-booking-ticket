@@ -1,5 +1,5 @@
 class Admin::MoviesController < AdminController
-  before_action :find_movie, except: %i(index new create)
+  before_action :find_movie, except: %i(index new create search)
   before_action :list_categories, only: :show
 
   rescue_from ActiveRecord::DeleteRestrictionError, with: :error_del_method
@@ -54,6 +54,11 @@ class Admin::MoviesController < AdminController
     end
   end
 
+  def search
+    @pagy, @movies = pagy Movie.search(params[:search]),
+                                 items: Settings.digits.admin_movie_per_page
+  end
+
   private
 
   def movie_params
@@ -72,5 +77,9 @@ class Admin::MoviesController < AdminController
 
   def list_categories
     @categories = @movie.categories.pluck(:name)
+  end
+
+  def movie_search_params
+    params.require(:movie).permit(:title)
   end
 end

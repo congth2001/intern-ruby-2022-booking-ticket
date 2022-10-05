@@ -24,6 +24,8 @@ vi:
   not_change_admin: Bạn không có quyền sửa đổi thông tin admin
   not_delete_admin: Bạn không có quyền xóa tài khoản admin
   not_found_user: Không tìm thấy người dùng
+  head_search: Hiển thị kết quả tìm kiếm
+  find_box: Tìm kiếm...
   text:
     intern_ruby: InternRuby2022BookingTicket
     user_not_found: Không tìm thấy người dùng
@@ -128,6 +130,14 @@ vi:
         delete: Xóa
         del_confirm: Bạn chắc chắn muốn xóa chứ?
         all: Tất cả lịch chiếu
+      search:
+        id: Thứ tự
+        title: Tiêu đề
+        duration: Thời lượng
+        release: Thời gian phát hành
+        range: Độ tuổi
+        category: Thể loại
+        show_times: Lịch chiếu
     show_times:
       show_time:
         change: Thay đổi
@@ -146,6 +156,15 @@ vi:
       user:
         delete: Xóa tài khoản
         del_confirm: Bạn có chắc muốn xóa tài khoản này không?
+      search:
+        manage: Quản lý người dùng
+        id: Số thứ tự
+        name: Họ tên
+        email: Email
+        phone: Số điện thoại
+        date_birth: Ngày sinh
+        sex: Giới tính
+        created_at: Ngày tạo tài khoản
     shared:
       movie_form:
         add: Thêm phim

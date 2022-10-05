@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       resources :payments
       resources :users
       get "/add_movie", to: "movies#new"
+      post "/movies/search", to: "movies#search"
+      post "/users/search", to: "users#search"
     end
 
     resources :showtimes do

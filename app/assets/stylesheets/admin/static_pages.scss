@@ -151,3 +151,35 @@ a.article, a.article:hover {
     color: red;
   }
 }
+
+.admin-search-form{
+  display: inline-block;
+  float: right;
+}
+
+.search {
+  display: inline-block;
+  padding: 23px 0 23px 75px;
+  .input-append {
+    position: relative;
+  }
+  .search-form {
+    .search-box {
+      border: 1px solid #ced0da;
+      font-size: 14px;
+      padding: 6px 25px 6px 10px;
+      transition: width 0.3s;
+      -webkit-transition: width 0.3s;
+      color: #43464b;
+      width: 250px;
+    }
+    .search-btn {
+      border: 0;
+      background: none;
+      padding: 2px 5px;
+      position: relative;
+      left: -32px;
+      color: #a0a3a7;
+    }
+  }
+}
